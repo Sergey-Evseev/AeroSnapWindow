@@ -51,5 +51,26 @@ namespace AeroSnapWindow
             base.WndProc(ref m);
         }
 
+        //обработчик (event method) изменения размеров формы с методом
+        //подгонки отступов (padding) содержания формы к ее границе
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            AdjustForm();
+        }
+        private void AdjustForm()
+        {
+            switch (this.WindowState)//в зависимости от состояния формы
+            {
+                case FormWindowState.Maximized:
+                    this.Padding = new Padding(8, 8, 8, 0); //int left,top,right,bottom
+                    break;
+                case FormWindowState.Normal:
+                    if (this.Padding.Top != borderSize)
+                        //окно в нормальнос сост. приводится к нач. значениямм = 2
+                    this.Padding = new Padding(borderSize);
+                    break;
+
+            }
+        }
     }
 }

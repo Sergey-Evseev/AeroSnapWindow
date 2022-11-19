@@ -250,13 +250,14 @@
             // 
             // iconButton9
             // 
+            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(183)))), ((int)(((byte)(208)))));
             this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.iconButton9.IconColor = System.Drawing.Color.White;
             this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton9.IconSize = 18;
-            this.iconButton9.Location = new System.Drawing.Point(562, 0);
+            this.iconButton9.Location = new System.Drawing.Point(564, 0);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Size = new System.Drawing.Size(28, 25);
             this.iconButton9.TabIndex = 3;
@@ -264,13 +265,14 @@
             // 
             // iconButtonExpand
             // 
+            this.iconButtonExpand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(150)))), ((int)(((byte)(250)))));
             this.iconButtonExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonExpand.IconChar = FontAwesome.Sharp.IconChar.ExpandAlt;
             this.iconButtonExpand.IconColor = System.Drawing.Color.White;
             this.iconButtonExpand.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonExpand.IconSize = 18;
-            this.iconButtonExpand.Location = new System.Drawing.Point(593, 0);
+            this.iconButtonExpand.Location = new System.Drawing.Point(594, 0);
             this.iconButtonExpand.Name = "iconButtonExpand";
             this.iconButtonExpand.Size = new System.Drawing.Size(28, 25);
             this.iconButtonExpand.TabIndex = 2;
@@ -278,6 +280,7 @@
             // 
             // iconButtonClose
             // 
+            this.iconButtonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(74)))), ((int)(((byte)(130)))));
             this.iconButtonClose.FlatAppearance.BorderSize = 0;
             this.iconButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -312,6 +315,7 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
