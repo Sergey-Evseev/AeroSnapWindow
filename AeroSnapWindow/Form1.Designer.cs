@@ -39,8 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
-            this.iconButtonExpand = new FontAwesome.Sharp.IconButton();
+            this.iconButtonMinimize = new FontAwesome.Sharp.IconButton();
+            this.iconButtonMaximize = new FontAwesome.Sharp.IconButton();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -238,8 +238,8 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.White;
-            this.panelTitleBar.Controls.Add(this.iconButton9);
-            this.panelTitleBar.Controls.Add(this.iconButtonExpand);
+            this.panelTitleBar.Controls.Add(this.iconButtonMinimize);
+            this.panelTitleBar.Controls.Add(this.iconButtonMaximize);
             this.panelTitleBar.Controls.Add(this.iconButtonClose);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
@@ -248,35 +248,37 @@
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
-            // iconButton9
+            // iconButtonMinimize
             // 
-            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(183)))), ((int)(((byte)(208)))));
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconButton9.IconColor = System.Drawing.Color.White;
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 18;
-            this.iconButton9.Location = new System.Drawing.Point(564, 0);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(28, 25);
-            this.iconButton9.TabIndex = 3;
-            this.iconButton9.UseVisualStyleBackColor = false;
+            this.iconButtonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(183)))), ((int)(((byte)(208)))));
+            this.iconButtonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconButtonMinimize.IconColor = System.Drawing.Color.White;
+            this.iconButtonMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonMinimize.IconSize = 18;
+            this.iconButtonMinimize.Location = new System.Drawing.Point(564, 0);
+            this.iconButtonMinimize.Name = "iconButtonMinimize";
+            this.iconButtonMinimize.Size = new System.Drawing.Size(28, 25);
+            this.iconButtonMinimize.TabIndex = 3;
+            this.iconButtonMinimize.UseVisualStyleBackColor = false;
+            this.iconButtonMinimize.Click += new System.EventHandler(this.iconButtonMinimize_Click);
             // 
-            // iconButtonExpand
+            // iconButtonMaximize
             // 
-            this.iconButtonExpand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonExpand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(150)))), ((int)(((byte)(250)))));
-            this.iconButtonExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonExpand.IconChar = FontAwesome.Sharp.IconChar.ExpandAlt;
-            this.iconButtonExpand.IconColor = System.Drawing.Color.White;
-            this.iconButtonExpand.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonExpand.IconSize = 18;
-            this.iconButtonExpand.Location = new System.Drawing.Point(594, 0);
-            this.iconButtonExpand.Name = "iconButtonExpand";
-            this.iconButtonExpand.Size = new System.Drawing.Size(28, 25);
-            this.iconButtonExpand.TabIndex = 2;
-            this.iconButtonExpand.UseVisualStyleBackColor = false;
+            this.iconButtonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(150)))), ((int)(((byte)(250)))));
+            this.iconButtonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonMaximize.IconChar = FontAwesome.Sharp.IconChar.ExpandAlt;
+            this.iconButtonMaximize.IconColor = System.Drawing.Color.White;
+            this.iconButtonMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonMaximize.IconSize = 18;
+            this.iconButtonMaximize.Location = new System.Drawing.Point(594, 0);
+            this.iconButtonMaximize.Name = "iconButtonMaximize";
+            this.iconButtonMaximize.Size = new System.Drawing.Size(28, 25);
+            this.iconButtonMaximize.TabIndex = 2;
+            this.iconButtonMaximize.UseVisualStyleBackColor = false;
+            this.iconButtonMaximize.Click += new System.EventHandler(this.iconButtonMaximize_Click);
             // 
             // iconButtonClose
             // 
@@ -295,6 +297,7 @@
             this.iconButtonClose.TabIndex = 1;
             this.iconButtonClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.iconButtonClose.UseVisualStyleBackColor = false;
+            this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
             // panelDesktop
             // 
@@ -315,6 +318,7 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -338,8 +342,8 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButtonClose;
-        private FontAwesome.Sharp.IconButton iconButtonExpand;
-        private FontAwesome.Sharp.IconButton iconButton9;
+        private FontAwesome.Sharp.IconButton iconButtonMaximize;
+        private FontAwesome.Sharp.IconButton iconButtonMinimize;
     }
 }
 

@@ -72,5 +72,32 @@ namespace AeroSnapWindow
 
             }
         }
+
+        private void iconButtonMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //при нажатии на кнопку увеличения окна
+        private void iconButtonMaximize_Click(object sender, EventArgs e)
+        {   //если окно было в нормальном состоянии            
+            if (this.WindowState == FormWindowState.Normal)
+                //то развернуть его
+                this.WindowState = FormWindowState.Maximized;
+            //если было раскрыто (или свернуто) то открыть в нормальном состоянии
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {   //поскольку это главная форма
+            Application.Exit(); //то полное закрытие приложения            
+        }
+
+        //fixing problem with resizing when maximizing and minimizing 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
