@@ -62,7 +62,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 523);
+            this.panelMenu.Size = new System.Drawing.Size(230, 655);
             this.panelMenu.TabIndex = 0;
             // 
             // iconButton8
@@ -77,7 +77,7 @@
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton8.IconSize = 30;
             this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(0, 469);
+            this.iconButton8.Location = new System.Drawing.Point(0, 601);
             this.iconButton8.Name = "iconButton8";
             this.iconButton8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.iconButton8.Size = new System.Drawing.Size(230, 54);
@@ -245,7 +245,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(655, 60);
+            this.panelTitleBar.Size = new System.Drawing.Size(851, 60);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -258,7 +258,7 @@
             this.iconButtonMinimize.IconColor = System.Drawing.Color.White;
             this.iconButtonMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonMinimize.IconSize = 18;
-            this.iconButtonMinimize.Location = new System.Drawing.Point(564, 0);
+            this.iconButtonMinimize.Location = new System.Drawing.Point(760, 0);
             this.iconButtonMinimize.Name = "iconButtonMinimize";
             this.iconButtonMinimize.Size = new System.Drawing.Size(28, 25);
             this.iconButtonMinimize.TabIndex = 3;
@@ -274,7 +274,7 @@
             this.iconButtonMaximize.IconColor = System.Drawing.Color.White;
             this.iconButtonMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonMaximize.IconSize = 18;
-            this.iconButtonMaximize.Location = new System.Drawing.Point(594, 0);
+            this.iconButtonMaximize.Location = new System.Drawing.Point(790, 0);
             this.iconButtonMaximize.Name = "iconButtonMaximize";
             this.iconButtonMaximize.Size = new System.Drawing.Size(28, 25);
             this.iconButtonMaximize.TabIndex = 2;
@@ -292,7 +292,7 @@
             this.iconButtonClose.IconColor = System.Drawing.Color.White;
             this.iconButtonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonClose.IconSize = 16;
-            this.iconButtonClose.Location = new System.Drawing.Point(624, 0);
+            this.iconButtonClose.Location = new System.Drawing.Point(820, 0);
             this.iconButtonClose.Name = "iconButtonClose";
             this.iconButtonClose.Size = new System.Drawing.Size(28, 25);
             this.iconButtonClose.TabIndex = 1;
@@ -306,14 +306,15 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(230, 60);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(655, 463);
+            this.panelDesktop.Size = new System.Drawing.Size(851, 595);
             this.panelDesktop.TabIndex = 2;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 523);
+            this.ClientSize = new System.Drawing.Size(1081, 655);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);

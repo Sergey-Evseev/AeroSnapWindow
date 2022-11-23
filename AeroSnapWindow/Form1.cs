@@ -24,15 +24,16 @@ namespace AeroSnapWindow
         public Form1()
         {
             InitializeComponent();
-            CollapseMenu();
+            //CollapseMenu();
             this.Padding = new Padding(borderSize); //border size
-            this.BackColor = Color.FromArgb(98, 102, 244);//border color            
+            this.BackColor = Color.FromArgb(98, 102, 244);//border color
+            panelDesktop.Paint += panelDesktop_Paint;                                              
         }
         //ОБРАБОТЧИК ЗАГРУЗКИ
         //fixing problem with resizing when maximizing and minimizing 
         private void Form1_Load(object sender, EventArgs e)
         {
-            formSize = this.ClientSize;
+            formSize = this.ClientSize;            
         }
 
         //DRAG FORM - загрузка внешних библиотеке
@@ -162,29 +163,33 @@ namespace AeroSnapWindow
             }
         }
         private void CollapseMenu()
-        {
+        { //при вызове метода если панель больше 200 то сузить до 100
             if (this.panelMenu.Width > 200) //Collapse menu
             {
                 panelMenu.Width = 100;
                 //pictureBox1.Visible = false;
+                
+                //навикон прикрепить к верху панели 
                 buttonMenu.Dock = DockStyle.Top;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                foreach (Button iconButton in panelMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(0);
+                    iconButton.Text = "";
+                    iconButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    iconButton.Padding = new Padding(0);
                 }
             }
-            else
-            { //Expand menu
+            else //если меньше 200 то расширить до 230
+            { //EXPAND MENU
                 panelMenu.Width = 230;
                 //pictureBox1.Visible = true;
+                
+                //отменить докинг навикона
                 buttonMenu.Dock = DockStyle.None;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                foreach (Button iconButton in panelMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text = "   " + menuButton.Tag.ToString();
-                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
-                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                    iconButton.Text = "   " + iconButton.Name.ToString(); 
+                    iconButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    iconButton.Padding = new Padding(10, 0, 0, 0);
                 }
             }
         } //end of private void CollapseMenu()
@@ -201,7 +206,7 @@ namespace AeroSnapWindow
         {
             CollapseMenu();
         }
-
+        //обработчик кнопки свертывания окна
         private void iconButtonMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -227,10 +232,17 @@ namespace AeroSnapWindow
                 this.Size = formSize;
             }
         }
-
+        //обработчик кнопки закрытия окна
         private void iconButtonClose_Click(object sender, EventArgs e)
         {   //поскольку это главная форма
             Application.Exit(); //...то полное закрытие приложения            
-        }        
+        }
+
+        //обработчик отрисовки панели с загрузкой графического файла
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+            Image img = Image.FromFile("Charts.png");            
+            e.Graphics.DrawImage(img, 30, 150, 830, 450);//X, Y, width, height                        
+        }
     }
 }
